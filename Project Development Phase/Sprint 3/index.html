@@ -1,0 +1,112 @@
+<style>
+    body{
+        background-image: url("image/pexels-pixabay-261403.jpg");
+        background-repeat: no-repeat;
+        background-position: 100%;
+    }
+    h1{
+        text-align: center;
+        font-size: 25px;
+        font: bold;
+    }
+    form {
+        position: relative;
+        top: 50px;
+        left: 500px;
+        background-color: rgb(0, 204, 255);
+        border-radius: 14px;
+        text-align: center;
+        height: 730px;
+        width: 350px;
+        padding-top: 30px;
+    }
+    input {
+        width: 300px;
+        height: 40px;
+        border-radius: 7px;
+        margin: 15px;
+        color: black;
+    }
+    button{
+        margin-top: 17px;
+        text-align: center;
+        height: 30px;
+        width: 90px;
+        color: white;
+        background-color: green;
+        cursor: pointer;
+        border-radius: 5px;
+        border-color: green;
+    }
+    #values{
+        position: relative;
+    }
+    #values label{
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 25px 34px;
+        font-size: 16px;
+        pointer-events: none;
+        transition: .5s;
+    }
+    #values input:focus ~ label,
+    #values input:valid ~ label {
+        top: -35px;
+        left: -8px;
+        font-size: 14px;
+    }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efficient Water Quality Prediction</title>
+</head>
+<body>
+    <h1>Water Quality Prediction</h1>
+    <form method="POST" action="{{ url_for('predict')}}">
+        <div id="values">
+        <input type="text" name="ph" autocomplete="off" required>
+        <label>Enter Ph value</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Hardness" autocomplete="off" required>
+        <label>Enter Hardness</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Solids" autocomplete="off" required>
+        <label>Enter Solids</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Chloramines" autocomplete="off" required>
+        <label>Enter Chloramines</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Sulfate" autocomplete="off" required>
+        <label>Enter Sulfate</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Conductivity" autocomplete="off" required>
+        <label>Enter Conductivity</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Organic_carbon" autocomplete="off" required>
+        <label>Enter Organic_carbon</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Trihalomethanes" autocomplete="off" required>
+        <label>Enter Trihalomethano</label>
+        </div>
+        <div id="values">
+        <input type="text" name="Turbidity" autocomplete="off" required>
+        <label>Enter Turbidity</label>
+        </div>
+		<center><button class="btn" type=submit name="submit_button" value=PREDICT>PREDICT</button></center>
+    </form>
+</body>
+</html>
